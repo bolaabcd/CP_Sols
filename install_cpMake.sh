@@ -17,4 +17,5 @@ else
     chmod +x ~/.local/bin/cpMake
     
     echo "Sucessfully installed cpMake using the following makefile: $(pwd)/makefile"
+    echo "It may be necessary to close and re-open the terminal to complete installation."
 fi
