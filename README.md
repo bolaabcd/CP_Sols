@@ -1,4 +1,4 @@
-# Maratona
-Códigos da maratona de programação.
+# Competitive Programming code
 
-Solutions for competitive programming problems and some implementations
+Solutions for competitive programming problems and implementations of some algorithms and data structures.
+
