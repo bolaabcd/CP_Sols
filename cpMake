@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if test -z $1 || test ! -f "$1.cpp"
+    then echo 'The first parameter should be the file to compile, without .cpp.'
+else
+    clear
+    make -f makefile $1 # absolute path to the makefile if it is not in the same directory as cpMake
+    ./$1 <&0 >&1
+fi
+
