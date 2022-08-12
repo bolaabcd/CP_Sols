@@ -10,119 +10,88 @@ typedef long long ll;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
-int n,d;		
-int tiraeve(int pr, vector<int>& mimimi,vector<int> & vec, int dum, int mini) {
-	if(pr == n-1){
-		dum = d-vec[n-2];
-	}
-	int minew = INF, maxi = dum;
-	for(int i = 0; i < n; i++) {
-		if(i == pr)
-			continue;
-		if(i == pr+1 && pr != 0){
-			maxi = max(maxi,vec[pr+1]-vec[pr-1]-1);
-			// minew = min(minew,vec[pr+1]-vec[pr-1]-1);
-		}
-		else if(i == pr+1 && pr == 0){
-			maxi = max(maxi,vec[pr+1]-1);
-			// minew = min(minew, vec[pr+1]-1);
-		}
-		else{
-			maxi = max(maxi,mimimi[i]);
-			// minew = min(minew,mimimi[i]);
-		}
-	}
-	bool pulou = false;
-	if((maxi-1)/2 <= dum-1){
-		dum--;
-		minew = dum;
-		pulou = true;
-	}
-	for(int i = 0; i < n; i++) {
-		if(i == pr)
-			continue;
-		if(i == pr+1 && pr != 0){
-			int valaq = vec[pr+1]-vec[pr-1]-1;
-			if(valaq == maxi && !pulou){
-				valaq =  (valaq-1)/2;
-				pulou = true;
-			} 
-			minew = min(minew, valaq);
-		}
-		else if(i == pr+1 && pr == 0){
-			int valaq = vec[pr+1]-1;
-			if((maxi-1)/2 <= valaq-1 && !pulou){
-				// valaq =  (valaq-1)/2;
-				// if( i == 0)
-					valaq--;
-				// else
-					// valaq=(valaq-1)/2;
-				pulou = true;
-			} 
-			minew = min(minew, valaq);
-		}
-		else{
-			int valaq = mimimi[i];
-			if(valaq == maxi && !pulou){
-				if(i == 0)
-					valaq--;
-				else
-					valaq =  (valaq-1)/2;
-				pulou = true;
-			}
-			minew = min(minew, valaq);
-		}
-	}
-
-
-	return minew;
-	// if(maxi < 2*minew+1)
-	// 	return -INF;
-	// else
-	// 	return minew;
-}
-
 int main() { _
 	int t;
 	cin >> t;
+	// //
+	// int k = 0, tot = t;
+	// //
 	while(t--) {
-
+		// // 
+		// k++;
+		// // 
+		int n,d;
 		cin >> n >> d;
+		// vec[minp] - vec[minp-1] eh o menor minv
+		int minp = -1, minv = INF;
+
 		vector<int> vec(n);// 1-based
-		for(int &i : vec) cin >> i;
-
-		//espaco vazio antes do i-esimo
-		vector<int> mimimi(n);
-		mimimi[0] = vec[0]-1;
-		int mini = mimimi[0];
-		for(int i = 1; i < n; i++){
-			mimimi[i] = vec[i]-vec[i-1]-1;
-			mini = min(mini,mimimi[i]);
-		}
-
-		vector<int> mis;// 0-based
 		for(int i = 0; i < n; i++) {
-			if(mimimi[i] == mini)
-				mis.push_back(i);
-		}
-		assert(mis.size() > 0);
-		if(mis.size() > 2)
-			cout << mini << endl;
-		else {
-			int duml =  d - vec[n-1];
-			int ans = mini;
-			for(int mip : mis) {
-				int minew = tiraeve(mip,mimimi,vec,duml, mini);
-				ans = max(minew, ans);
-				if(mip < n-1)
-				minew = tiraeve(mip+1,mimimi,vec,duml, mini);
-				ans = max(minew, ans);
-				if(mip > 0)
-				minew = tiraeve(mip-1,mimimi,vec,duml, mini);
-				ans = max(minew, ans);
+			cin >> vec[i];
+			if(i == 0){
+				minv = vec[i]-1;
+				minp = i;
 			}
-			cout << ans << endl;
+			else if (vec[i] - vec[i-1]-1 < minv){
+				minv = vec[i] - vec[i-1]-1;
+				minp = i;
+			}
 		}
+
+		// //
+		// if(tot == 10000){
+		// 	if(k == 140) {
+		// 		cout << n << " " << d << endl;
+		// 		for(int l:vec) cout << l << " ";
+		// 		cout << endl;
+		// 	} else {
+		// 		continue;
+		// 	}
+		// }
+		// //
+
+		assert(minv != INF);
+		assert(minp != -1);
+
+		int maxans = minv;
+
+		for(int m = max(minp-1,0); m <= minp; m++) {
+			auto copia = vec;
+			int m2 = m, n2 = n, maxv = -INF, maxp = -1;
+			for(int i = 0; i < n2; i++) {
+				if(i == m2)
+					copia.erase(copia.begin()+i), i--, m2 = -1, n2--;
+				else if (i == 0 and (copia[i]-1-1)/2 > maxv){
+					maxv = (copia[i]-1-1)/2;
+					maxp = copia[i]/2;
+				}
+				else if ((copia[i]-copia[i-1]-1-1)/2 > maxv){
+					maxv = (copia[i]-copia[i-1]-1-1)/2;
+					maxp = copia[i-1] + (copia[i]-copia[i-1])/2;
+				}
+			}
+			assert(maxp != -1);
+			if(d-copia[n2-1]-1 > maxv) {
+				maxv = d-copia[n2-1]-1;
+				maxp = d;
+			}
+			if(maxv == 0)
+				continue;
+			copia.push_back(maxp);
+			sort(copia.begin(), copia.end());
+
+			int nmin = INF;
+			for(int i = 0; i < n; i++) {
+				if(i == 0)
+					nmin = min(nmin,copia[i]-1);
+				else{
+					nmin = min(nmin,copia[i] - copia[i-1]-1);
+				}
+			}
+			maxans = max(maxans,nmin);
+		}
+
+		cout << maxans << endl; 
 	}
 	exit(0);
 }
@@ -134,4 +103,37 @@ int main() { _
 1 5
 
 1
+
+
+
+
+9
+
+3 12
+3 5 9
+
+2 5
+1 5
+
+2 100
+1 2
+
+5 15
+3 6 9 12 15
+
+3 1000000000
+1 400000000 500000000
+
+2 10
+3 4
+
+2 2
+1 2
+
+4 15
+6 11 12 13
+
+2 20
+17 20
+
 */
