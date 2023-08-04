@@ -4,9 +4,8 @@ LOOKED AT ANSWER (wasn't thinking about binary operations. Now I don't think thi
 LOOKED AT ANSWER (Got to the point we wanted to find a full binary tree that minimizes the sum of depthi*valuei for each leaf i, and leafs are the values of some set, but had no idea of where to go from there): #https://cses.fi/problemset/task/1161
 LOOKED AT ANSWER (Had the correct idea, but bad implementation (problem with extremes)): #https://cses.fi/problemset/task/2086
 Nice combinatorial problem, took some time but did it #https://cses.fi/problemset/task/1080
-https://cses.fi/problemset/task/2088
-https://cses.fi/problemset/task/1113
-https://cses.fi/problemset/task/2110
+#https://cses.fi/problemset/task/1113
+LOOKED AT ALGORITHM ONLINE AND SIMILAR SOLUTION (was going to try with suffix tree, but decided to learn with suffix array): #https://cses.fi/problemset/task/2110
 https://cses.fi/problemset/task/1698
 https://cses.fi/problemset/task/1098
 https://cses.fi/problemset/task/1660
@@ -136,6 +135,7 @@ https://cses.fi/problemset/task/2432
 https://cses.fi/problemset/task/1723
 https://cses.fi/problemset/task/1689
 https://cses.fi/problemset/task/2131
+https://cses.fi/problemset/task/2088
 https://cses.fi/problemset/task/1082
 https://cses.fi/problemset/task/1086
 https://cses.fi/problemset/task/2064
