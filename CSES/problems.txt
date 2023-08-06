@@ -6,12 +6,12 @@ LOOKED AT ANSWER (Had the correct idea, but bad implementation (problem with ext
 Nice combinatorial problem, took some time but did it #https://cses.fi/problemset/task/1080
 #https://cses.fi/problemset/task/1113
 LOOKED AT ALGORITHM ONLINE AND SIMILAR SOLUTION (was going to try with suffix tree, but decided to learn with suffix array): #https://cses.fi/problemset/task/2110
-https://cses.fi/problemset/task/1698
-https://cses.fi/problemset/task/1098
-https://cses.fi/problemset/task/1660
-https://cses.fi/problemset/task/1682
-https://cses.fi/problemset/task/1096
-https://cses.fi/problemset/task/2189
+Trial and Error (thought of a log(n) steps solution first, but then found an O(1) steps solution. Got to the solution simply by guessing what was the optimal): #https://cses.fi/problemset/task/1698
+#https://cses.fi/problemset/task/1098
+#https://cses.fi/problemset/task/1660
+#https://cses.fi/problemset/task/1682
+#https://cses.fi/problemset/task/1096
+Note: can check ccw with other vectors. And (obviously) colinearity isn't just the angle, parallel lines have the same angle but their points are not collinear.#https://cses.fi/problemset/task/2189
 https://cses.fi/problemset/task/1715
 https://cses.fi/problemset/task/1647
 https://cses.fi/problemset/task/1678
