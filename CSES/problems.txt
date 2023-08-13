@@ -14,8 +14,8 @@ Trial and Error (thought of a log(n) steps solution first, but then found an O(1
 Note: can check ccw with other vectors. And (obviously) colinearity isn't just the angle, parallel lines have the same angle but their points are not collinear.#https://cses.fi/problemset/task/2189
 #https://cses.fi/problemset/task/1715
 #https://cses.fi/problemset/task/1647
-https://cses.fi/problemset/task/1678
-https://cses.fi/problemset/task/1085
+#https://cses.fi/problemset/task/1678
+#https://cses.fi/problemset/task/1085
 https://cses.fi/problemset/task/1646
 https://cses.fi/problemset/task/1724
 https://cses.fi/problemset/task/1707
