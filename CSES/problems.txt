@@ -20,9 +20,9 @@ Note: can check ccw with other vectors. And (obviously) colinearity isn't just t
 LOOKED at a correct code and then had the correct idea. Was trying maxflow-mincost ;-; #https://cses.fi/problemset/task/1724
 #https://cses.fi/problemset/task/1707
 #https://cses.fi/problemset/task/1649
-https://cses.fi/problemset/task/2087
-https://cses.fi/problemset/task/1756
-https://cses.fi/problemset/task/1079
+LOOKED at answer, will try again later: https://cses.fi/problemset/task/2087
+Not_submited#https://cses.fi/problemset/task/1756
+Not submited#https://cses.fi/problemset/task/1079
 https://cses.fi/problemset/task/2103
 https://cses.fi/problemset/task/2190
 https://cses.fi/problemset/task/2215
