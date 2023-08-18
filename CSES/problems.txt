@@ -21,9 +21,9 @@ LOOKED at a correct code and then had the correct idea. Was trying maxflow-minco
 #https://cses.fi/problemset/task/1707
 #https://cses.fi/problemset/task/1649
 LOOKED at answer, will try again later: https://cses.fi/problemset/task/2087
-Not_submited#https://cses.fi/problemset/task/1756
-Not submited#https://cses.fi/problemset/task/1079
-Not submited#https://cses.fi/problemset/task/2103
+#https://cses.fi/problemset/task/1756
+#https://cses.fi/problemset/task/1079
+#https://cses.fi/problemset/task/2103
 https://cses.fi/problemset/task/2190
 https://cses.fi/problemset/task/2215
 https://cses.fi/problemset/task/1665

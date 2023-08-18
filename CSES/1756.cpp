@@ -15,7 +15,7 @@ const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 const int MAX = 1e5+10;
 
-vector<int> gr[MAX];
+map<int,int> gr[MAX];// pra onde e qtdd
 map<int,bool> grm[MAX];
 bool mark[MAX];
 
@@ -27,8 +27,8 @@ int main() { __
 		cin >> a >> b;
 		a--;
 		b--;
-		gr[a].pb(b);
-		gr[b].pb(a);
+		gr[a][b]+=1;
+		gr[b][a]+=1;
 		grm[a][b] = false;
 		grm[b][a] = false;
 	}
@@ -41,10 +41,11 @@ int main() { __
 			if(mark[j])
 				continue;
 			mark[j] = true;
-			for(int k : gr[j]) {
+			for(auto [k,kk] : gr[j]) {
 				if(!grm[j][k]) {
 					grm[j][k] = true;
 					grm[k][j] = true;
+					for(int wow = 0; wow < kk; wow++)
 					cout << j+1 << ' ' << k+1 << endl;
 				}
 				if(!mark[k])
