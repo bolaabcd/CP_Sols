@@ -24,8 +24,8 @@ LOOKED at answer, will try again later: https://cses.fi/problemset/task/2087
 #https://cses.fi/problemset/task/1756
 #https://cses.fi/problemset/task/1079
 #https://cses.fi/problemset/task/2103
-#https://cses.fi/problemset/task/2190
-#https://cses.fi/problemset/task/2215
+NOT_SUBMITED#https://cses.fi/problemset/task/2190
+NOT_SUBMITED#https://cses.fi/problemset/task/2215
 https://cses.fi/problemset/task/1665
 https://cses.fi/problemset/task/2430
 https://cses.fi/problemset/task/1679
