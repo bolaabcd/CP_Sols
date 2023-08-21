@@ -20,17 +20,18 @@ int main() { __
 	cin >> n >> x;
 	vector<ll> vec(n);
 	for(ll&i:vec)cin>>i;
+	sort(vec.begin(),vec.end());
 	ll dp[100+10][5000+10];// dp(i,x) = ateh i , <= x
 	for(int j = 0; j <= x; j++)
-		dp[0][j] = 1;
+		dp[0][j] = 1; // sem ngm eh <= tudo
 
-	for(int j = 1; j <= x; j++)
-		for(int i = 1; i <= n; i++) {
+	for(int i = 1; i <= n; i++) 
+		for(int j = 0; j <= x; j++) {
 			dp[i][j] = 0;
 			for(int k = i; k >= 1; k--) {
-				if(x-dif >= 0) {
-					ll dif = vec[i]-vec[k];
-					dp[i][j] += dp[k-1][x-dif]+dif;
+				ll dif = vec[i-1]-vec[k-1];
+				if(j-dif >= 0) {
+					dp[i][j] += dp[k-1][j-dif];
 					dp[i][j] %= MOD;
 				}
 			}
