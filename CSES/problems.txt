@@ -27,7 +27,7 @@ LOOKED at answer, will try again later: https://cses.fi/problemset/task/2087
 NOT_SUBMITED#https://cses.fi/problemset/task/2190
 NOT_SUBMITED#https://cses.fi/problemset/task/2215
 NOT_SUBMITED#https://cses.fi/problemset/task/1665
-https://cses.fi/problemset/task/2430
+TLE_TRY_MORE#https://cses.fi/problemset/task/2430
 https://cses.fi/problemset/task/1679
 https://cses.fi/problemset/task/2109
 https://cses.fi/problemset/task/1691
