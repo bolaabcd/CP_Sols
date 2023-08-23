@@ -17,15 +17,34 @@ const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 int main() { __
 	int n,m;
 	cin >> n >> m;
-	vector<set<int>> grr(n),gr(n);
-		for(int i = 0; i < m; i++) {
+	vector<vector<int>> gr(n);
+	vector<int> gin(n),ans;
+	for(int i = 0; i < m; i++) {
 		int a,b;
 		cin >> a >> b;
 		a--;
 		b--;
-		gr[a].insert(b);
-		grr[b].insert(a);
+		gr[a].pb(b);
+		gin[b]++;
 	}
+	set<pair<int,int>> pq; // grau de entrada, noh
+	for(int i = 0; i < n; i++)
+		pq.insert({gin[i],i});
+	while(!pq.empty()) {
+		auto [x,i] = *pq.begin();
+		pq.erase(pq.begin());
+		if(x != 0) {
+			cout << "IMPOSSIBLE" << endl;
+			exit(0);
+		}
+		ans.pb(i+1);
+		for(int j : gr[i]) {
+			pq.erase({gin[j],j});
+			gin[j]--;
+			pq.insert({gin[j],j});
+		}
+	}
+/*
 	set<int> fronter;
 	vector<int> ans;
 	for(int i = 0; i < n; i++)
@@ -41,14 +60,19 @@ int main() { __
 			}
 			gr[i].clear();
 		}
-		fronter = front2;
+		set<int> front3;
+		for(int i : front2)
+			if(grr[i].size() == 0)
+				front3.insert(i);
+		fronter = front3;
 	};
 	if(ans.size() != n) {
 		cout << "IMPOSSIBLE" << endl;
 		exit(0);
-	}
+	}*/
 	for(int i : ans)
 		cout << i << ' ';
 	cout << endl;
+	
 	exit(0);
 }
