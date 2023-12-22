@@ -24,10 +24,10 @@ LOOKED at answer, will try again later: https://cses.fi/problemset/task/2087
 #https://cses.fi/problemset/task/1756
 #https://cses.fi/problemset/task/1079
 #https://cses.fi/problemset/task/2103
-NOT_SUBMITED#https://cses.fi/problemset/task/2190
-NOT_SUBMITED#https://cses.fi/problemset/task/2215
-NOT_SUBMITED#https://cses.fi/problemset/task/1665
-NOT_SUBMITED#https://cses.fi/problemset/task/1679
+#https://cses.fi/problemset/task/2190
+#https://cses.fi/problemset/task/2215
+WA#https://cses.fi/problemset/task/1665
+#https://cses.fi/problemset/task/1679
 https://cses.fi/problemset/task/2109
 https://cses.fi/problemset/task/1691
 https://cses.fi/problemset/task/1669

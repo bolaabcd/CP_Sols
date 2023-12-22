@@ -52,17 +52,16 @@ void solve() {
 	if(p1 == p3 or p1 == p4 or p2 == p3 or p2 == p4)
 		cout << "YES" << endl;
 	else if(colin(p1,p2,p3) and colin(p1,p2,p4)) {
-		if(prod(p21,p31) > 0) { // mesma dir
+		if(prod(p21,p31) > 0 and prod(p21,p41) > 0) { // mesma dir os dois
 			if(modsq(p31) > modsq(p21) and modsq(p41) > modsq(p21))
 				cout << "NO" << endl;
 			else
 				cout << "YES" << endl;
-		} else {
-			if(prod(p21,p41) < 0) // os dois na direcao oposta
-				cout << "NO" << endl;
-			else
-				cout << "YES" << endl;
-		}
+		} else if(prod(p21,p31) < 0 and prod(p21,p41) < 0) { // Os 2 na direcao oposta
+			cout << "NO" << endl;
+		} else { // Um em cada direcao
+            cout << "YES" << endl;
+        }
 	} else if(colin(p1,p2,p3)){
 		if(modsq(p31) > modsq(p21) or prod(p21,p31) < 0)
 			cout << "NO" << endl;
